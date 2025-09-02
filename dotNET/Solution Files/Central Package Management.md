@@ -4,6 +4,8 @@ In Solution File
 	<PropertyGroup>
 		<!-- ... -->
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<!-- use version defined in Directory.packages.props for transient dependencies -->
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- ... -->

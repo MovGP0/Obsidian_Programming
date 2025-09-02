@@ -82,6 +82,10 @@ dotnet pack --configuration 'Release'
 dotnet nuget push 'bin/Release/MyLibrary.1.0.0.nupkg' --api-key 'APIKEY' --source 'https://api.nuget.org/v3/index.json'
 ```
 
+## See also
+
+- [[Central Package Management]]
+
 ## Weblinks
 
 - [NuGet.org](https://www.nuget.org/)
