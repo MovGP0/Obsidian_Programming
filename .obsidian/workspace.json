@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fb766c9a98ed8a45",
+        "id": "b37c5c9e474387fd",
         "type": "tabs",
         "children": [
           {
-            "id": "74a6b9e72f76e8e2",
+            "id": "6e2c774ce2ed1e1e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -144,6 +144,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "command-palette:Open command palette": false,
@@ -151,7 +152,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "74a6b9e72f76e8e2",
+  "active": "6e2c774ce2ed1e1e",
   "lastOpenFiles": [
+    "CAS Software/Axiom/Axiom Docker Container.md",
+    "Programming Languages/LEAN/LEAN 4.md",
+    "Programming Languages",
+    "OCR/Mistral OCR.md",
+    "CAS Software/Axiom",
+    "CAS Software",
+    "Programming Languages/LEAN",
+    "Databases/Time-Series Databases.md",
+    "Databases/_Databases.md"
   ]
 }
