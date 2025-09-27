@@ -1,3 +1,6 @@
+---
+title: Escape Characters
+---
 > Lean’s input method and mostly matching LaTeX).
 > Type the sequence and confirm it (e.g., space/Enter) to insert the symbol.
 

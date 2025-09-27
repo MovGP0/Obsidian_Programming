@@ -1,31 +1,54 @@
-```lean
--- begin a namespace
-namespace MyNamespace
+## Comments
 
+Single line comments:
+```lean
+-- this is a single-line comment
+```
+
+Comment blocks:
+```lean
+/-
+This is a block comment
+-/
+```
+
+LEAN supports nested comment blocks:
+```lean
+/-
+Outer comment
+  /- Inner comment -/
+Back in outer
+-/
+```
+
+## Namespaces
+
+```lean
+namespace SomeNamespaceName
+
+-- the content of the namespace
+
+end SomeNamespaceName
+```
+
+## Define a variable
+```lean
 -- defining a variable, type, and value
 def x : Nat := 40
 
 -- defining a variable with type inference
 def y := x + 2
+```
 
--- check prints the type
-#check y -- y : Nat
+## Invoke / Get Type
 
+```lean
 -- #eval invokes/evaluates a function
 #eval (y + 1)
 
--- end a namespace
-end MyNamespace
+-- check prints the type
+#check y -- y : Nat
 ```
-
-## Types
-
-- **Scalars**: `Nat`, `Int`, `Bool`, `Char`, `String`
-- **Products / tuples**: `α × β`
-- **Sums / variants**: `Sum α β` with `Sum.inl`, `Sum.inr`
-- **Options**: `Option α` with `none` / `some a`
-- **Lists**: `List α` with `[]` / `a :: xs`
-- **Unit / Empty**: `Unit` (one value `()`) / `Empty` (no values)
 
 ## Define Functions
 ```lean

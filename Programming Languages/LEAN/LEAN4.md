@@ -1,3 +1,6 @@
+---
+title: L∃∀N 4
+---
 ## References
 
 - [LEAN Documentation](https://lean-lang.org/lean4/doc/)
