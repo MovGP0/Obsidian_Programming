@@ -75,17 +75,27 @@ ENV LANG=C.UTF-8 \
     # Increase SBCL dynamic space for heavy sessions
     SBCL_OPTIONS="--dynamic-space-size 4096"
 
-# Install jFriCAS kernel (from PyPI) + Jupyter in a dedicated venv
+# Installs Jupyter (brings jupyter_client)
+# then jFriCAS without build isolation
+# Installs jFriCAS kernel (from PyPI) + Jupyter in a dedicated venv
 # This keeps Python bits isolated and faster to upgrade if needed.
-RUN python3 -m venv /opt/jpy && \
-    /opt/jpy/bin/pip install --no-cache-dir --upgrade pip && \
-    /opt/jpy/bin/pip install --no-cache-dir jupyter jfricas && \
-    # Install kernelspec globally so `New -> FriCAS` appears
-    /opt/jpy/bin/python - <<'PY'
-import json, sys, os, jupyter_client, subprocess
-# jfricas installs a kernelspec via entry point; ensure it's registered:
-subprocess.check_call([os.path.join('/opt/jpy/bin','python'), '-m', 'jupyter', 'kernelspec', 'list'])
-PY
+ 
+# --- create venv + pin pip to a known-good series (optional but stabilizes behaviour)
+RUN python3 -m venv /opt/jpy \
+ && /opt/jpy/bin/python -m pip install --no-cache-dir --upgrade "pip<25" # optional pin
+
+# --- install jupyter (brings jupyter_client)
+RUN /opt/jpy/bin/pip install --no-cache-dir jupyter \
+ && /opt/jpy/bin/pip show jupyter-client
+
+# --- make pip build jfricas in THIS environment (no build isolation, no PEP 517)
+ENV PIP_NO_BUILD_ISOLATION=1 \
+    PIP_USE_PEP517=0
+
+RUN /opt/jpy/bin/pip install --no-cache-dir jfricas
+
+# --- sanity check: the kernelspec should now be registered
+RUN /opt/jpy/bin/jupyter kernelspec list
 
 # Helpful default: run Jupyter Lab bound to all interfaces (no browser),
 # and use xvfb-run so any FriCAS graphics won't error out.
