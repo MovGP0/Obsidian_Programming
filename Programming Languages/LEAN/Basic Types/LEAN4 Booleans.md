@@ -17,6 +17,14 @@ inductive Bool where
 > [!note]
 > The `Bool.true` and `Bool.false` types are exported to be used as `true` and `false`
 
+> [!note]
+> The definition of the `Bool` type is somewhat equivalent to the following C# code:
+> ```csharp
+> abstract class Bool {}
+> class True : Bool {}
+> class False : Bool {}
+> ```
+
 Boolean operations:
 ```lean
 -- AND
