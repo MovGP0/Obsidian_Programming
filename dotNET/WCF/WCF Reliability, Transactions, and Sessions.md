@@ -1,0 +1,3 @@
+- **Reliable sessions**: `wsHttpBinding` / `netTcpBinding` with `reliableSession enabled="true"` (ordered delivery, retransmit).
+- **Transactions**: use `TransactionFlow` on operations + bindings that support it (`wsHttpBinding`, `netTcpBinding`).
+- **Duplex callbacks**: use `CallbackContract` + duplex-capable bindings (`netTcpBinding`, `wsDualHttpBinding`).

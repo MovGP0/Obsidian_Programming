@@ -1,0 +1,3 @@
+- Enable **message logging** & **activity tracing** (WCF) or **ASP.NET Core logging** (CoreWCF).
+- Use **SvcTraceViewer.exe** for WCF traces
+- for CoreWCF wire-level, rely on ASP.NET Core logging + tools like Fiddler/Wireshark on HTTP(S).

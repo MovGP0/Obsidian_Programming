@@ -1,0 +1,5 @@
+- **Transport (TLS)**: simplest, fastest; set `https` or Net.TCP with TLS. Use reverse proxies/load balancers as needed.
+- **Message security**: required when intermediaries must not terminate TLS; enables **claims** and **end-to-end** trust; more CPU.
+- **Client auth**: `None`, `Basic` (over TLS), `Windows`, `UserName` (message), `Certificate`, or **issued tokens** (STS).
+- **Certificates**: use subject name or thumbprint; configure validation (ChainTrust/PeerTrust) and revocation checking.
+- **Identity element** on client endpoints helps prevent MITM by verifying expected service identity (DNS/Cert).
