@@ -1,4 +1,4 @@
-Register Tracing:
+setRegister Tracing:
 ```csharp
 builder.Services.AddOpenTelemetryTracing(b =>
 {

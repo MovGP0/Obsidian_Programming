@@ -1,0 +1,5 @@
+- [MagicShot AI SVG art generator](https://magicshot.ai/features/svg-art-generator/)
+- [Canva Vector AI](https://www.canva.com/create/vector-ai/)
+- [Kittl Vector Generator](https://www.kittl.com/tools/vector-generator)
+- [SVG.io](https://svg.io/)
+- [Recraft AI Vector Generator](https://www.recraft.ai/ai-vector-generator)
