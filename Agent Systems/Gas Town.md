@@ -1,3 +1,6 @@
+---
+title: 🏙️ Gas Town
+---
 **Gas Town** is a **workspace manager and multi-agent orchestrator** that lets you coordinate _many_ AI coding agents working on different tasks without losing context when individual agents restart. It persists work state in git-backed hooks and facilitates automated workflows, agent roles, work tracking, and merge coordination.
 
 Gas Town addresses core problems in multi-agent development:
