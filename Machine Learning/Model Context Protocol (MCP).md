@@ -119,6 +119,16 @@ Used for debugging and testing of MCP Servers
 npx @modelcontextprotocol/inspector
 ```
 
+## MCP 2.0
+
+| Area             | MCP                   | MCP 2.0                                                           |
+| ---------------- | --------------------- | ----------------------------------------------------------------- |
+| Workflow support | Synchronous only      | **Asynchronous tasks and long-running jobs**<br>                  |
+| Authorization    | Basic model, optional | **OAuth-aligned, protected resource metadata, scope negotiation** |
+| Schema defaults  | Mixed                 | **JSON Schema 2020-12 default + default values**                  |
+| Governance       | Emergent              | **Formal governance and extension processes**                     |
+| Interoperability | Client/server basics  | **Improved identity, discovery, governance support**              |
+| Transport Layer  | REST                  | JSON-RPC 2.0 over HTTPs and [[Server-Sent Events (SSE)]]          |
 ## Resources
 
 - [Awesome .NET MCP](https://github.com/SciSharp/Awesome-DotNET-MCP): List of MCP resources for .NET development
