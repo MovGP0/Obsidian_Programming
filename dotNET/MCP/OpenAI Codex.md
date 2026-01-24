@@ -57,6 +57,22 @@ args = [
 IJ_MCP_SERVER_PORT = "64342"
 ```
 
-### References
+### RustRover
+
+```toml
+[mcp_servers.RustRover]
+type = "stdio"
+command = "C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\jbr\\bin\\java"
+args= [
+  "-classpath",
+  "C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\plugins\\mcpserver\\lib\\mcpserver-frontend.jar;C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\lib\\util-8.jar;C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\lib\\modules\\intellij.libraries.ktor.client.cio.jar;C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\lib\\lib-client.jar;C:\\Program Files (x86)\\JetBrains\\RustRover 2024.3\\lib\\modules\\intellij.libraries.ktor.client.jar",
+  "com.intellij.mcpserver.stdio.McpStdioRunnerKt"
+]
+
+[mcp_servers.RustRover.env]
+IJ_MCP_SERVER_PORT = "64342"
+```
+
+## References
 - [OpenAI Developers: Configuring Codex](https://developers.openai.com/codex/local-config/)
 - [GitHub: OpenAI Codex Config](https://github.com/openai/codex/blob/main/docs/config.md)
