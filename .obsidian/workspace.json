@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b37c5c9e474387fd",
+        "id": "098f5191376547f8",
         "type": "tabs",
         "children": [
           {
-            "id": "6e2c774ce2ed1e1e",
+            "id": "61d6278cd4ad4125",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Agent",
+                "query": "file:Resource",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -152,8 +152,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6e2c774ce2ed1e1e",
+  "active": "61d6278cd4ad4125",
   "lastOpenFiles": [
+    "dotNET/Logging/Custom Rolling File Logger.md",
+    "dotNET/Logging/LogEvent.md",
+    "dotNET/Logging/Formatters/W3cLogEntryFormatter.md",
+    "dotNET/Logging/Formatters/TextLogEntryFormatter.md",
+    "dotNET/Logging/Formatters/JsonlLogEntryFormatter.md",
+    "dotNET/Logging/Formatters/ILogEntryFormatter.md",
+    "dotNET/Logging/Formatters/ElfLogEntryFormatter.md",
+    "dotNET/Logging/Formatters/ClfLogEntryFormatter.md",
+    "dotNET/Logging/Formatters/CefLogEntryFormatter.md",
+    "dotNET/Logging/ScopeFormatter.md",
+    "dotNET/Logging/ScopeFilter.md",
+    "dotNET/Logging/RollingFileWriter.md",
+    "dotNET/Logging/RollingFileLoggerProvider.md",
+    "dotNET/Logging/RollingFileLoggerOptions.md",
+    "dotNET/Logging/RollingFileLogger.md",
+    "dotNET/Logging/Formatters",
+    "dotNET/Resource files.md",
     "CAS Software/Axiom/Axiom Docker Container.md",
     "Programming Languages/LEAN/LEAN 4.md",
     "Programming Languages",
