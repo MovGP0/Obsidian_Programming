@@ -1,18 +1,26 @@
 
 Start the OpenTelemetry logging dashboard container with the following command:
 ```powershell
-docker run`
+docker rm -f aspire-dashboard;
+docker run `
     -p 18888:18888 `
     -p 4317:18889 `
     -p 4318:18890 `
     -p 18891:18891 `
-    -it -d`
+    -it -d `
     --name aspire-dashboard `
-    -e DASHBOARD__OTLP__AUTHMODE=Unsecured `
+    -e DASHBOARD__OTLP__AUTHMODE=ApiKey `
     -e DASHBOARD__TELEMETRYLIMITS__MAXLOGCOUNT='1000' `
     -e DASHBOARD__TELEMETRYLIMITS__MAXTRACECOUNT='1000' `
     -e DASHBOARD__TELEMETRYLIMITS__MAXMETRICSCOUNT='1000' `
+
+    # Enable MCP Endpoint
+    -e ASPIRE_DASHBOARD_MCP_ENDPOINT_URL="http://0.0.0.0:18891" `
     -e ASPIRE_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS=true `
+
+    # Enable API for Aspire CLI
+    -e DASHBOARD__API__ENABLED=true `
+    -e DASHBOARD__API__AUTHMODE=Unsecured `
     mcr.microsoft.com/dotnet/aspire-dashboard:latest;
 ```
 
@@ -33,6 +41,43 @@ OTEL_EXPORTER_OTLP_TRACES_ENDPOINT = "http://localhost:4318/v1/traces"
 OTEL_EXPORTER_OTLP_LOGS_ENDPOINT = "http://localhost:4318/v1/logs"
 OTEL_EXPORTER_OTLP_PROTOCOL = "http/protobuf"
 OTEL_METRIC_EXPORT_INTERVAL = 10000
+```
+
+#### MCP Configuration  
+  
+```powershell  
+setx ASPIRE_MCP_API_KEY "paste-the-key-from-the-dashboard-mcp-dialog"  
+```  
+
+**config.toml**  
+```toml  
+[mcp_servers.aspire_dashboard]  
+url = "http://localhost:18891/mcp"  
+env_http_headers = { "x-mcp-api-key" = "ASPIRE_MCP_API_KEY" }  
+startup_timeout_sec = 20  
+tool_timeout_sec = 60  
+```  
+
+#### Aspire CLI Configuration  
+  
+Install the Aspire CLI  
+```powershell  
+irm https://aspire.dev/install.ps1 | iex  
+```  
+
+> [!important]  
+> This requires Aspire CLI 13.3.0 or later.  
+> For a newer version of the Aspire CLI, you can specify the quality channel to install from:  
+> ```powershell  
+> iex "& { $(irm https://aspire.dev/install.ps1) } -Quality dev"  
+> iex "& { $(irm https://aspire.dev/install.ps1) } -Quality staging"  
+> ```
+
+Analyze Open Telemetry (OTEL) data with the Aspire CLI:  
+```powershell  
+aspire otel traces --dashboard-url http://localhost:18888  
+aspire otel spans --dashboard-url http://localhost:18888  
+aspire otel logs --dashboard-url http://localhost:18888  
 ```
 
 ## Troubleshooting
