@@ -1,4 +1,4 @@
-# OPC Unified Architecture
+﻿# OPC Unified Architecture
 
 OPC UA (OLE for Process Control Unified Architecture) is a machine-to-machine communication protocol for industrial automation
 
@@ -27,6 +27,7 @@ OPC UA (OLE for Process Control Unified Architecture) is a machine-to-machine co
 
 ## See also
 
+- [[OPC UA Telemetry]]
 - [[OPC UA Data Type]]
 - [[OPC UA Node]]
 - [[OPC UA Reference]]
