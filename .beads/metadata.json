@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "Obsidian_Programming",
+  "project_id": "79933b27-1592-4d36-b821-a627dc7615cb"
+}
