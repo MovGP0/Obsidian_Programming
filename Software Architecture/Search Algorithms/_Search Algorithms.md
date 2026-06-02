@@ -1,5 +1,6 @@
-# Search Algorithms
-
+---
+title: Search Algorithms
+---
 This folder covers graph search and route-planning algorithms, with emphasis on shortest-path routing in road networks.
 
 | Article | Core idea | Practical use |

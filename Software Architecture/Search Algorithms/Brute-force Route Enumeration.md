@@ -1,6 +1,4 @@
-# Brute-force Route Enumeration
-
-Brute-force route enumeration tries every possible route from a source to a target, computes each route cost, and returns the cheapest one.
+**Brute-force** route enumeration tries every possible route from a source to a target, computes each route cost, and returns the cheapest one.
 
 It is useful as a thought experiment, but it is not a practical routing algorithm for large graphs. The number of simple paths can grow exponentially with the number of vertices. In road networks, even a modest graph can have more candidate routes than can be checked directly.
 

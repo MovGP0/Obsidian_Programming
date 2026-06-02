@@ -1,6 +1,4 @@
-# Priority Queue and Greedy Expansion
-
-A priority queue is the data structure that makes practical Dijkstra and A-star implementations efficient. It always returns the frontier item with the smallest priority.
+A **priority queue** is the data structure that makes practical Dijkstra and A-star implementations efficient. It always returns the frontier item with the smallest priority.
 
 In shortest-path search, the priority is usually:
 

@@ -16,11 +16,17 @@ For a rule `A -> B`:
 | Confidence | Probability of `B` given `A`.                                                      |
 | Lift       | Whether `A` and `B` occur together more often than expected from popularity alone. |
 
-```text
-support(A -> B) = count(A and B) / total baskets
-confidence(A -> B) = count(A and B) / count(A)
-lift(A -> B) = confidence(A -> B) / support(B)
-```
+$$
+\operatorname{support}(A \Rightarrow B) = \frac{\operatorname{count}(A \cap B)}{\operatorname{total\ baskets}}
+$$
+
+$$
+\operatorname{confidence}(A \Rightarrow B) = \frac{\operatorname{count}(A \cap B)}{\operatorname{count}(A)}
+$$
+
+$$
+\operatorname{lift}(A \Rightarrow B) = \frac{\operatorname{confidence}(A \Rightarrow B)}{\operatorname{support}(B)}
+$$
 
 ## C# example: pair rules
 
@@ -87,4 +93,3 @@ static List<AssociationRule> BuildPairRules(
 ## Watch out for
 
 High confidence can be caused by item popularity. Lift helps distinguish meaningful relationships from "everything points to the bestseller".
-

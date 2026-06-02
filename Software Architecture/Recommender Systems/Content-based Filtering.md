@@ -19,17 +19,17 @@ Features must be normalized so one large numeric feature does not dominate the s
 
 A user profile is usually an aggregate of liked item profiles. Recent and strong interactions can receive higher weight.
 
-```text
-user profile = weighted average of profiles for liked items
-```
+$$
+p_u = \frac{\sum_{i \in I_u} w_{ui} p_i}{\sum_{i \in I_u} w_{ui}}
+$$
 
 ## TF-IDF for text
 
 For descriptions, titles, or reviews, TF-IDF gives higher weight to terms that are frequent in an item but uncommon across the catalog.
 
-```text
-tfidf(term, item) = term_frequency(term, item) * inverse_document_frequency(term)
-```
+$$
+\operatorname{tfidf}(t, i) = \operatorname{tf}(t, i) \cdot \operatorname{idf}(t)
+$$
 
 ## C# example: recommend by profile cosine
 
@@ -75,4 +75,3 @@ static double CosineSimilarity(
 - Can over-specialize and recommend only near duplicates.
 - Depends heavily on metadata quality.
 - May miss taste signals not present in item features.
-

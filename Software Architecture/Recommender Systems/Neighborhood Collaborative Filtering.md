@@ -4,8 +4,10 @@
 
 User-user filtering finds users similar to the active user and recommends items those neighbors liked.
 
-```text
-similar users -> their liked items -> weighted score
+```mermaid
+flowchart LR
+    SimilarUsers[Similar users] --> LikedItems[Their liked items]
+    LikedItems --> WeightedScore[Weighted score]
 ```
 
 It is intuitive but can be expensive because user populations change often.
@@ -14,8 +16,10 @@ It is intuitive but can be expensive because user populations change often.
 
 Item-item filtering finds items similar to items the active user liked.
 
-```text
-user's liked items -> similar items -> weighted score
+```mermaid
+flowchart LR
+    UserLikedItems[User's liked items] --> SimilarItems[Similar items]
+    SimilarItems --> WeightedScore[Weighted score]
 ```
 
 This is often more stable because item catalogs change slower than user behavior. Item similarity can be precomputed offline.
@@ -80,4 +84,3 @@ static IReadOnlyList<string> RecommendFromSimilarItems(
 ## Pros and cons
 
 Neighborhood methods are explainable and easy to prototype. They suffer when data is sparse, when users have unusual tastes, or when new items have little interaction history.
-

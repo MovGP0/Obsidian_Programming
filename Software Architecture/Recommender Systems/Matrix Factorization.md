@@ -4,15 +4,15 @@
 
 Given a user vector `p_u` and item vector `q_i`, predict a rating by dot product:
 
-```text
-prediction(u, i) = p_u · q_i
-```
+$$
+\hat{r}_{ui} = p_u \cdot q_i
+$$
 
 With biases:
 
-```text
-prediction(u, i) = global_mean + user_bias_u + item_bias_i + p_u · q_i
-```
+$$
+\hat{r}_{ui} = \mu + b_u + b_i + p_u \cdot q_i
+$$
 
 ## SVD idea
 
@@ -84,4 +84,3 @@ static void TrainOne(
 - Harder to explain.
 - Needs enough interactions.
 - Requires tuning factors, learning rate, regularization, epochs, and negative sampling for implicit data.
-

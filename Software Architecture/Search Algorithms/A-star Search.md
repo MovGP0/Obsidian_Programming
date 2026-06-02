@@ -1,12 +1,11 @@
-# A-star Search
-
-A-star search is Dijkstra's algorithm plus a heuristic estimate from each node to the target.
+---
+title: A* Search
+---
+A* search is [[Dijkstra's algorithm]] plus a heuristic estimate from each node to the target.
 
 The priority is:
 
-```text
-f(n) = g(n) + h(n)
-```
+$$f(n) = g(n) + h(n)$$
 
 `g(n)` is the known cost from the source to `n`. `h(n)` is the estimated remaining cost from `n` to the target.
 

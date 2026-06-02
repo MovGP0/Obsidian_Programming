@@ -1,6 +1,10 @@
-# Breadth-First Search
+---
+title: Breadth-first search
+aliases:
+  - BFS
+---
 
-Breadth-first search, BFS, explores an unweighted graph in layers from a source vertex. It first visits nodes one edge away, then two edges away, and so on.
+**Breadth-first search** (**BFS**), explores an unweighted graph in layers from a source vertex. It first visits nodes one edge away, then two edges away, and so on.
 
 BFS gives the shortest path by number of edges. It does not handle different road distances or travel times unless all edges have the same cost.
 

@@ -1,6 +1,4 @@
-# Dijkstra's Algorithm
-
-Dijkstra's algorithm finds shortest paths from one source to every reachable node in a graph with non-negative edge weights.
+**Dijkstra's algorithm** finds shortest paths from one source to every reachable node in a graph with non-negative edge weights.
 
 The algorithm maintains the best known distance to each node. It repeatedly expands the unvisited node with the smallest known distance. Once a node is removed from the priority queue with its final distance, no cheaper path to that node can still exist.
 

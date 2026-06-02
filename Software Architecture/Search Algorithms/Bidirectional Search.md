@@ -1,6 +1,4 @@
-# Bidirectional Search
-
-Bidirectional search runs two searches at the same time:
+**Bidirectional search** runs two searches at the same time:
 
 - forward from the source
 - backward from the target

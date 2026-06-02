@@ -1,6 +1,4 @@
-# Road-network Hierarchy
-
-Road-network hierarchy uses the structure of real roads to guide routing. Long routes usually have this shape:
+**Road-network hierarchy** uses the structure of real roads to guide routing. Long routes usually have this shape:
 
 ```text
 local road -> arterial road or highway -> local road

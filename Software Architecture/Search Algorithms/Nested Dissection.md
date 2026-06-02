@@ -1,6 +1,4 @@
-# Nested Dissection
-
-Nested dissection is a graph ordering technique. It recursively partitions a graph and ranks separator nodes as important.
+**Nested dissection** is a graph ordering technique. It recursively partitions a graph and ranks separator nodes as important.
 
 In a road network, a small separator can be a set of bridge crossings, mountain passes, or other bottlenecks. If many shortest paths must pass through a small group of nodes, those nodes are structurally important.
 

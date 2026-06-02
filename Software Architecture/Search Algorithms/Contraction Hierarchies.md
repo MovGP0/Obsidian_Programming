@@ -1,6 +1,4 @@
-# Contraction Hierarchies
-
-Contraction hierarchies are a shortest-path acceleration technique for large road networks.
+**Contraction hierarchies** are a shortest-path acceleration technique for large road networks.
 
 The method preprocesses the graph by ranking nodes. Low-ranked nodes are less important, such as local cul-de-sac intersections. High-ranked nodes are more important, such as highway interchanges or separator nodes.
 

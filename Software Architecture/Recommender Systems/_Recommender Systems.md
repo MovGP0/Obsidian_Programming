@@ -5,8 +5,14 @@ A **recommender system** selects and ranks items that are likely to be useful fo
 
 ## Core pipeline
 
-```text
-events -> preferences -> candidates -> scores -> ranked recommendations -> feedback
+```mermaid
+flowchart LR
+    Events[Events] --> Preferences[Preferences]
+    Preferences --> Candidates[Candidates]
+    Candidates --> Scores[Scores]
+    Scores --> RankedRecommendations[Ranked recommendations]
+    RankedRecommendations --> Feedback[Feedback]
+    Feedback --> Events
 ```
 
 | Stage                | Purpose                                                                                |

@@ -1,6 +1,10 @@
-# Customizable Contraction Hierarchies
-
-Customizable contraction hierarchies, CCH, split contraction hierarchy work into phases so routing can react to changing edge weights.
+---
+title: Customizable Contraction Hierarchies
+aliases:
+  - Customizable Contraction Hierarchy
+  - CCH
+---
+**Customizable contraction hierarchies** (**CCH**), split contraction hierarchy work into phases so routing can react to changing edge weights.
 
 Road topology changes rarely. Travel-time weights change often because of traffic, weather, closures, and turn restrictions. CCH separates those concerns.
 
