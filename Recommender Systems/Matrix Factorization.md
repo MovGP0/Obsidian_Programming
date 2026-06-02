@@ -1,6 +1,4 @@
-# Matrix Factorization
-
-Matrix factorization represents users and items as vectors in a latent factor space. The model learns hidden dimensions such as genre preference, seriousness, popularity, or other factors that may not have explicit names.
+**Matrix factorization** represents users and items as vectors in a latent factor space. The model learns hidden dimensions such as genre preference, seriousness, popularity, or other factors that may not have explicit names.
 
 ## Basic model
 

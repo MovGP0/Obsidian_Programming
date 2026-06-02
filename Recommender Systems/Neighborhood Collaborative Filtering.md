@@ -1,6 +1,4 @@
-# Neighborhood Collaborative Filtering
-
-Neighborhood collaborative filtering recommends from similar users or similar items. It uses behavior patterns, not item metadata.
+**Neighborhood collaborative filtering** recommends from similar users or similar items. It uses behavior patterns, not item metadata.
 
 ## User-user collaborative filtering
 

@@ -1,13 +1,10 @@
-# User-Item Matrix and Ratings
+The **user-item matrix** is the central data structure for many recommender algorithms. Rows represent users, columns represent items, and cells contain a preference signal.
 
-The user-item matrix is the central data structure for many recommender algorithms. Rows represent users, columns represent items, and cells contain a preference signal.
-
-```text
-          item A   item B   item C
-user 1       5        ?        2
-user 2       ?        4        ?
-user 3       1        5        4
-```
+|        | item A | item B | item C |
+| :----: | :----: | :----: | :----: |
+| user 1 |   5    |   ?    |   2    |
+| user 2 |   ?    |   4    |   ?    |
+| user 3 |   1    |   5    |   4    |
 
 The missing cells are the recommendation problem: estimate what the user would like, click, buy, watch, or otherwise value.
 

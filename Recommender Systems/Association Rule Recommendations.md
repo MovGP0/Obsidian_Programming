@@ -1,6 +1,4 @@
-# Association Rule Recommendations
-
-Association rules recommend items that frequently occur together. A common product form is:
+**Association rules** recommend items that frequently occur together. A common product form is:
 
 ```text
 users who interacted with X also interacted with Y
@@ -12,11 +10,11 @@ Rules are built from baskets, sessions, orders, or user histories.
 
 For a rule `A -> B`:
 
-| Measure | Meaning |
-| ------- | ------- |
-| Support | How often `A` and `B` occur together. |
-| Confidence | Probability of `B` given `A`. |
-| Lift | Whether `A` and `B` occur together more often than expected from popularity alone. |
+| Measure    | Meaning                                                                            |
+| ---------- | ---------------------------------------------------------------------------------- |
+| Support    | How often `A` and `B` occur together.                                              |
+| Confidence | Probability of `B` given `A`.                                                      |
+| Lift       | Whether `A` and `B` occur together more often than expected from popularity alone. |
 
 ```text
 support(A -> B) = count(A and B) / total baskets

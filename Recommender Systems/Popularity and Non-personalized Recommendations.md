@@ -1,18 +1,16 @@
-# Popularity and Non-personalized Recommendations
-
-Non-personalized recommenders ignore the active user's individual taste. They recommend items based on global or segment-level signals.
+**Non-personalized recommenders** ignore the active user's individual taste. They recommend items based on global or segment-level signals.
 
 These recommenders are simple but important. They are useful before enough personal data exists and serve as strong baselines for more complex algorithms.
 
 ## Common strategies
 
-| Strategy | Description |
-| -------- | ----------- |
-| Most popular | Rank items by views, purchases, ratings, or another global count. |
-| Trending | Rank by recent growth rather than all-time count. |
-| Recent | Prefer newly added or newly updated items. |
-| Editorial | Human-curated recommendations. |
-| Segment popular | Popular within geography, language, category, device, or cohort. |
+| Strategy        | Description                                                       |
+| --------------- | ----------------------------------------------------------------- |
+| Most popular    | Rank items by views, purchases, ratings, or another global count. |
+| Trending        | Rank by recent growth rather than all-time count.                 |
+| Recent          | Prefer newly added or newly updated items.                        |
+| Editorial       | Human-curated recommendations.                                    |
+| Segment popular | Popular within geography, language, category, device, or cohort.  |
 
 ## C# example: popularity with time decay
 

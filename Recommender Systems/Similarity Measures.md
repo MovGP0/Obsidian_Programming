@@ -1,14 +1,10 @@
-# Similarity Measures
-
-Similarity functions compare users, items, or profiles. They are used in neighborhood collaborative filtering, content-based filtering, clustering, and deduplication.
+**Similarity functions** compare users, items, or profiles. They are used in neighborhood collaborative filtering, content-based filtering, clustering, and deduplication.
 
 ## Jaccard similarity
 
 Jaccard compares sets:
 
-```text
-J(A, B) = |A ∩ B| / |A ∪ B|
-```
+$$J(A, B) = |A ∩ B| \setminus |A ∪ B|$$
 
 It works well for unary data such as "items purchased" or "tags assigned".
 
@@ -25,9 +21,7 @@ static double Jaccard<T>(IReadOnlySet<T> a, IReadOnlySet<T> b)
 
 Manhattan distance sums absolute differences:
 
-```text
-d(x, y) = sum(|x_i - y_i|)
-```
+$$d(x, y) = \sum(|x_i - y_i|)$$
 
 It is useful when dimensions are independent and linear.
 
@@ -35,9 +29,7 @@ It is useful when dimensions are independent and linear.
 
 Euclidean distance is straight-line distance:
 
-```text
-d(x, y) = sqrt(sum((x_i - y_i)^2))
-```
+$$d(x, y) = \sqrt(\sum((x_i - y_i)^2))$$
 
 It penalizes large differences more strongly than Manhattan distance.
 
@@ -45,9 +37,7 @@ It penalizes large differences more strongly than Manhattan distance.
 
 Cosine similarity compares vector direction rather than magnitude:
 
-```text
-cos(x, y) = dot(x, y) / (||x|| ||y||)
-```
+$$cos(x, y) = (x \cdot y) / (||x|| ||y||)$$
 
 It is common for rating vectors, text vectors, and sparse item profiles.
 

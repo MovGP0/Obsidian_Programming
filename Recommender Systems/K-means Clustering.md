@@ -1,6 +1,4 @@
-# K-means Clustering
-
-K-means clusters users or items into `k` groups based on feature vectors. It is not a recommender by itself, but it can support recommendation by finding coarse segments.
+**K-means clusters** users or items into `k` groups based on feature vectors. It is not a recommender by itself, but it can support recommendation by finding coarse segments.
 
 Examples:
 

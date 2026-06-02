@@ -1,5 +1,3 @@
-# Ranking and Learning to Rank
-
 Recommendation is usually a ranking problem. The system does not only ask whether an item is relevant; it asks which items should appear first.
 
 ## Ranking pipeline
@@ -12,11 +10,11 @@ Candidate generators produce possible items. The ranker orders them using featur
 
 ## Learning to rank families
 
-| Family | Training signal |
-| ------ | --------------- |
+| Family    | Training signal                                      |
+| --------- | ---------------------------------------------------- |
 | Pointwise | Predict an independent score or label for each item. |
-| Pairwise | Learn that one item should rank above another. |
-| Listwise | Optimize properties of the whole ranked list. |
+| Pairwise  | Learn that one item should rank above another.       |
+| Listwise  | Optimize properties of the whole ranked list.        |
 
 ## Bayesian Personalized Ranking
 

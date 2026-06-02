@@ -1,6 +1,4 @@
-# Content-based Filtering
-
-Content-based filtering recommends items similar to items the user already liked. It uses item features rather than only user behavior.
+**Content-based filtering** recommends items similar to items the user already liked. It uses item features rather than only user behavior.
 
 ## Item profile
 

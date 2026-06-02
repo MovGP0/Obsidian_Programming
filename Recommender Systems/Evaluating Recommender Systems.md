@@ -1,6 +1,4 @@
-# Evaluating Recommender Systems
-
-Recommender evaluation checks whether the system improves user experience and business outcomes. Offline metrics are useful, but online experiments are usually needed before trusting a production change.
+**Recommender evaluation** checks whether the system improves user experience and business outcomes. Offline metrics are useful, but online experiments are usually needed before trusting a production change.
 
 ## Offline evaluation
 
@@ -13,16 +11,16 @@ Offline evaluation uses historical data:
 
 ## Metrics
 
-| Metric | Measures |
-| ------ | -------- |
-| MAE / RMSE | Prediction error for explicit ratings. |
-| Precision@k | Fraction of top-k recommendations that are relevant. |
-| Recall@k | Fraction of relevant items found in the top-k list. |
-| MAP | Average precision across users, sensitive to rank order. |
-| NDCG | Ranking quality with graded relevance. |
-| Coverage | How much of the catalog or user base receives recommendations. |
-| Diversity | How different recommended items are from each other. |
-| Serendipity | Useful recommendations the user would not obviously expect. |
+| Metric      | Measures                                                       |
+| ----------- | -------------------------------------------------------------- |
+| MAE / RMSE  | Prediction error for explicit ratings.                         |
+| Precision@k | Fraction of top-k recommendations that are relevant.           |
+| Recall@k    | Fraction of relevant items found in the top-k list.            |
+| MAP         | Average precision across users, sensitive to rank order.       |
+| NDCG        | Ranking quality with graded relevance.                         |
+| Coverage    | How much of the catalog or user base receives recommendations. |
+| Diversity   | How different recommended items are from each other.           |
+| Serendipity | Useful recommendations the user would not obviously expect.    |
 
 ## C# example: precision at k
 

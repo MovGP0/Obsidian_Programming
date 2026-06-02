@@ -1,16 +1,14 @@
-# Hybrid Recommenders
-
-Hybrid recommenders combine multiple recommendation strategies. This is common in production because no single algorithm handles every data condition well.
+**Hybrid recommenders** combine multiple recommendation strategies. This is common in production because no single algorithm handles every data condition well.
 
 ## Types
 
-| Type | Description |
-| ---- | ----------- |
-| Switching | Choose one recommender based on context, such as cold user vs. warm user. |
-| Mixed | Show results from multiple recommenders side by side or interleaved. |
-| Weighted ensemble | Combine scores from several recommenders with fixed or learned weights. |
-| Monolithic | Use features from multiple sources inside one model. |
-| Stacking | Train a second-level model to combine outputs from base recommenders. |
+| Type              | Description                                                               |
+| ----------------- | ------------------------------------------------------------------------- |
+| Switching         | Choose one recommender based on context, such as cold user vs. warm user. |
+| Mixed             | Show results from multiple recommenders side by side or interleaved.      |
+| Weighted ensemble | Combine scores from several recommenders with fixed or learned weights.   |
+| Monolithic        | Use features from multiple sources inside one model.                      |
+| Stacking          | Train a second-level model to combine outputs from base recommenders.     |
 
 ## C# example: weighted score ensemble
 
