@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "73fe7f177890634e",
+        "id": "21c3e38ce439567d",
         "type": "tabs",
         "children": [
           {
-            "id": "6c9b0b3b38dd130b",
+            "id": "0399ec7808a14728",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path",
+                "query": "multicast",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 429.5
+    "width": 573.5
   },
   "right": {
     "id": "73a64b91218644df",
@@ -152,8 +152,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6c9b0b3b38dd130b",
+  "active": "0532ea71f8302973",
   "lastOpenFiles": [
+    "Protocols/Service Discovery/DNS-Based Service Discovery.md",
+    "Protocols/DNS/DNS SRV Records.md",
+    "Protocols/DNS",
+    "Protocols/Service Discovery/WS-Discovery.md",
+    "Protocols/Service Discovery/Universal Plug and Play.md",
+    "Protocols/Service Discovery/Universal Description Discovery and Integration.md",
+    "Protocols/Service Discovery/Simple Service Discovery Protocol.md",
+    "Protocols/Service Discovery/Service Location Protocol.md",
+    "Protocols/Service Discovery/OPC UA Discovery.md",
+    "Protocols/Service Discovery/Multicast DNS.md",
+    "Protocols/Service Discovery/_Service Discovery.md",
+    "Protocols/Telemetry Protocols/BACnet.md",
+    "Protocols/Telemetry Protocols/_Telemetry Protocols.md",
+    "Protocols/Telemetry Protocols",
+    "Protocols/Telemetry Protocols/MQTT.md",
+    "Protocols/Telemetry Protocols/Matter.md",
+    "Protocols/Service Discovery/Notes.md",
+    "Protocols/Service Discovery",
     "Software Architecture/Workflow Patterns/_Workflow Patterns.md",
     "Software Architecture/Workflow Patterns/Termination Patterns.md",
     "Software Architecture/Workflow Patterns/Trigger Patterns.md",
@@ -164,31 +182,12 @@
     "Software Architecture/Workflow Patterns/Basic Control Flow Patterns.md",
     "Software Architecture/Workflow Patterns/Advanced Branching and Synchronization Patterns.md",
     "Software Architecture/Workflow Patterns/Control-Flow/_Control-Flow Patterns.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/General Synchronizing Merge.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Explicit Termination.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Multi-Merge.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Multi-Choice.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Milestone.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Local Synchronizing Merge.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Interleaved Routing.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Implicit Termination.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Exclusive Choice.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Critical Section.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Cancelling Partial Join for Multiple Instances.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Cancelling Discriminator.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Cancel Task.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Cancel Region.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Cancel Case.md",
-    "Software Architecture/Workflow Patterns/Control-Flow/Blocking Partial Join.md",
     "Software Architecture/Workflow Patterns/Log Imperfection",
     "Software Architecture/Workflow Patterns/Presentation",
     "Software Architecture/Workflow Patterns/Exception Handling",
     "Software Architecture/Workflow Patterns/Data",
     "Software Architecture/Workflow Patterns/Resources",
     "Software Architecture/Workflow Patterns/Control-Flow",
-    "Software Architecture/Recommender Systems",
-    "Software Architecture/Search Algorithms",
-    "dotNET/Logging/Formatters",
-    "Programming Languages"
+    "Software Architecture/Recommender Systems"
   ]
 }
