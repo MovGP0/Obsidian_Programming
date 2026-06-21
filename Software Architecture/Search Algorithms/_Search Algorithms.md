@@ -1,4 +1,4 @@
----
+﻿---
 title: Search Algorithms
 ---
 This folder covers graph search and route-planning algorithms, with emphasis on shortest-path routing in road networks.
@@ -11,6 +11,7 @@ This folder covers graph search and route-planning algorithms, with emphasis on 
 | [[Priority Queue and Greedy Expansion]] | Use a heap to select the next best frontier item. | Makes Dijkstra and A-star practical. |
 | [[A-star Search]] | Add an admissible estimate to the destination. | Target-directed shortest path search. |
 | [[Bidirectional Search]] | Search from source and target at the same time. | Reduces explored area for point-to-point queries. |
+| [[Monte Carlo Tree Search]] | Build a partial game tree from sampled simulations. | Balances exploration and exploitation in large decision spaces. |
 | [[Road-network Hierarchy]] | Prefer local roads near endpoints and high-level roads for long distance. | Encodes structure that plain graph search misses. |
 | [[Nested Dissection]] | Recursively find separator nodes and rank them. | Builds graph orderings for fast routing preprocessing. |
 | [[Contraction Hierarchies]] | Contract low-ranked nodes and add shortcut edges. | Very fast exact shortest-path queries after preprocessing. |
@@ -33,4 +34,3 @@ var graph = new Dictionary<string, List<Edge>>
 ```
 
 For road networks, vertices are intersections or road endpoints. Edges are road segments. The edge weight can mean distance, expected travel time, toll cost, energy consumption, or a composite routing score.
-
