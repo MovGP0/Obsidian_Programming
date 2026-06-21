@@ -12,6 +12,8 @@ This folder covers graph search and route-planning algorithms, with emphasis on 
 | [[A-star Search]] | Add an admissible estimate to the destination. | Target-directed shortest path search. |
 | [[Bidirectional Search]] | Search from source and target at the same time. | Reduces explored area for point-to-point queries. |
 | [[Monte Carlo Tree Search]] | Build a partial game tree from sampled simulations. | Balances exploration and exploitation in large decision spaces. |
+| [[_Tree Policies\|Tree Policies]] | Selection rules used while descending an MCTS tree. | Compare UCT, PUCT, progressive widening, and related policies. |
+| [[Policy Networks]] | Estimate promising actions from a game or planning state. | Guides MCTS and reinforcement-learning agents in huge action spaces. |
 | [[Road-network Hierarchy]] | Prefer local roads near endpoints and high-level roads for long distance. | Encodes structure that plain graph search misses. |
 | [[Nested Dissection]] | Recursively find separator nodes and rank them. | Builds graph orderings for fast routing preprocessing. |
 | [[Contraction Hierarchies]] | Contract low-ranked nodes and add shortcut edges. | Very fast exact shortest-path queries after preprocessing. |
