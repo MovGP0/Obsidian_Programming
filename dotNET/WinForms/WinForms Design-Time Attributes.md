@@ -1,3 +1,6 @@
+---
+title: Design-Time Attributes
+---
 Design-time attributes are located in `System.ComponentModel`
 
 | Attribute                                  | Description                                                                                                                                                         |

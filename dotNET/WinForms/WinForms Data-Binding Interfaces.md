@@ -1,3 +1,6 @@
+---
+title: Data-Binding Interfaces
+---
 - [[IBindingList]]
 - [[ICancelAddNew]]
 - [[ICurrencyManagerProvider and CurrencyManager]]

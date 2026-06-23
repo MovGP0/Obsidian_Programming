@@ -1,3 +1,6 @@
+---
+title: Task Scheduling
+---
 ## using Control.Invoke
 
 Run Background Thread and update property in UI thread
@@ -151,7 +154,7 @@ public partial class Form1 : Form
 }
 ```
 
-Task continuation using [[_Task Parallel Library]]
+Task continuation using [[_Task Parallel Library|Task Parallel Library (TPL)]]
 ```csharp
 Task.Run(() =>
 {

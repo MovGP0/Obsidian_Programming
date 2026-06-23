@@ -1,3 +1,6 @@
+---
+title: Data-Binding
+---
 Implement a ViewModel that implements `INotifyPropertyChanged`
 ```csharp
 public sealed class MyViewModel : INotifyPropertyChanged

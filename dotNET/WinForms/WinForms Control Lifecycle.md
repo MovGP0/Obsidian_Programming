@@ -1,3 +1,6 @@
+---
+title: Control Lifecycle
+---
 The lifecycle of a WinForms control typically follows these steps:
 
 1.  The control is instantiated through its constructor (`Control()`).
