@@ -181,6 +181,31 @@ end
 assign TerminalCount = &Count;
 ```
 
+MOD-4 counter:
+
+```verilog
+module Mod4Counter
+(
+    input  wire       Clock,
+    input  wire       Reset,
+    output reg  [1:0] Count
+);
+    always @(posedge Clock or posedge Reset)
+    begin
+        if (Reset)
+        begin
+            Count <= 2'b00;
+        end
+        else
+        begin
+            Count <= Count + 1'b1;
+        end
+    end
+endmodule
+```
+
+Because `Count` is two bits wide, incrementing naturally wraps from `2'b11` back to `2'b00`.
+
 ## Shift Registers
 
 ```verilog
@@ -198,6 +223,40 @@ end
 ```
 
 The nonblocking assignment uses the old value of `Shift` for all right-hand-side bits.
+
+Serial-in shift register:
+
+```verilog
+module ShiftRegister4
+(
+    input  wire       Clock,
+    input  wire       Reset,
+    input  wire       SerialIn,
+    output reg  [3:0] Data
+);
+    always @(posedge Clock or posedge Reset)
+    begin
+        if (Reset)
+        begin
+            Data <= 4'b0000;
+        end
+        else
+        begin
+            Data <= {Data[2:0], SerialIn};
+        end
+    end
+endmodule
+```
+
+Simulation must include a clock generator:
+
+```verilog
+initial
+begin
+    Clock = 1'b0;
+    forever #5 Clock = ~Clock;
+end
+```
 
 ## FSM Checklist
 
@@ -220,3 +279,4 @@ The nonblocking assignment uses the old value of `Shift` for all right-hand-side
 ## Sources
 
 - Peter M. Nyasulu, "Introduction to Verilog", section 14.
+- YouTube: [MOD-4 Synchronous Up Counter Explained](https://www.youtube.com/watch?v=CEFFm50USgA)

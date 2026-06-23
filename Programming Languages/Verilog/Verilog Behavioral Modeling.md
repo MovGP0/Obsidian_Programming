@@ -110,6 +110,18 @@ end
 
 This swaps two registers. With blocking assignment it would not mean the same thing.
 
+In a clocked pipeline, this means the second register sees the old value:
+
+```verilog
+always @(posedge Clock)
+begin
+    X <= A;
+    Y <= X;
+end
+```
+
+Both right-hand sides are evaluated for the same clock edge, then both left-hand sides update. Mixing `=` and `<=` without a specific reason is a common simulation bug.
+
 ## If / Else
 
 ```verilog
@@ -127,6 +139,22 @@ end
 ```
 
 If a combinational `if` has no assignment in some path, synthesis infers storage.
+
+Two-input MUX:
+
+```verilog
+always @(*)
+begin
+    if (Select)
+    begin
+        Y = B;
+    end
+    else
+    begin
+        Y = A;
+    end
+end
+```
 
 ## Case
 
@@ -155,6 +183,36 @@ end
 ```
 
 Use `default` for combinational decode. This avoids accidental latches and defines behavior for unused encodings.
+
+Four-input MUX:
+
+```verilog
+always @(*)
+begin
+    case (Select)
+        2'b00:
+        begin
+            Y = A;
+        end
+        2'b01:
+        begin
+            Y = B;
+        end
+        2'b10:
+        begin
+            Y = C;
+        end
+        2'b11:
+        begin
+            Y = D;
+        end
+        default:
+        begin
+            Y = 1'b0;
+        end
+    endcase
+end
+```
 
 ## `case`, `casex`, and `casez`
 
@@ -251,3 +309,6 @@ end
 ## Sources
 
 - Peter M. Nyasulu, "Introduction to Verilog", sections 8, 9, and 10.
+- YouTube: [Introduction to Behavioral Modeling in Verilog](https://www.youtube.com/watch?v=dTCiUa-s2YE)
+- YouTube: [Inter vs Intra Assignment Explained](https://www.youtube.com/watch?v=VG5xdgxjtOY)
+- YouTube: [Loops & Case Statements in Verilog](https://www.youtube.com/watch?v=g1MkRBDuM1Y)

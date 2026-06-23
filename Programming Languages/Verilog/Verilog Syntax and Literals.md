@@ -97,6 +97,16 @@ Avoid relying on unsized constants:
 assign Next = Count + 1;      // Legal, but less explicit.
 ```
 
+The common beginner examples are:
+
+```verilog
+4'b1010    // 4-bit binary
+8'hA5      // 8-bit hexadecimal
+6'd37      // 6-bit decimal
+```
+
+If the literal is narrower than the destination, Verilog extends it. If it is wider, the extra high bits can be truncated. Make the intended width visible when arithmetic or comparison behavior matters.
+
 ## Strings
 
 Strings are mostly used in testbenches and system tasks:
@@ -164,6 +174,21 @@ module Example
 endmodule
 ```
 
+Minimal combinational module:
+
+```verilog
+module And2
+(
+    input  wire A,
+    input  wire B,
+    output wire Y
+);
+    assign Y = A & B;
+endmodule
+```
+
+Every design unit is wrapped by `module` and `endmodule`. Port declarations describe the boundary, while declarations and assignments inside the module describe the hardware behind that boundary.
+
 ## Related Notes
 
 - [[Verilog]]
@@ -173,3 +198,4 @@ endmodule
 ## Sources
 
 - Peter M. Nyasulu, "Introduction to Verilog", sections 2 and 6.
+- YouTube: [Modules, Number Representations & Comments](https://www.youtube.com/watch?v=IP_8QJ5k2I8)

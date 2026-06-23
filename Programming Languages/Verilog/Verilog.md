@@ -131,6 +131,17 @@ Usually simulation-only:
 - Keep synthesizable RTL and testbench code separate.
 - Lint before synthesis.
 
+## Beginner Learning Path
+
+| Topic | Where to continue |
+| --- | --- |
+| Modules, comments, literals, and four-state values | [[Verilog Syntax and Literals]] |
+| `wire`, `reg`, `integer`, `real`, `time`, vectors, and operators | [[Verilog Data Types and Operators]] |
+| Port connection by name/order, structural style, half adders, and full adders | [[Verilog Modules and Instantiation]] |
+| `always` blocks, `if`, `case`, loops, MUXes, and assignment timing | [[Verilog Behavioral Modeling]] |
+| `$display`, `$monitor`, clocks, reset stimulus, and DUT structure | [[Verilog Testing and Testbenches]] |
+| Counters, shift registers, and FSM organization | [[Verilog State Machines]] |
+
 ## Dedicated Notes
 
 - [[Verilog Syntax and Literals]]
@@ -147,3 +158,13 @@ Usually simulation-only:
 ## Sources
 
 - Peter M. Nyasulu, "Introduction to Verilog", local PDF: [PetervrlK.pdf](file:///C:/Users/Johann.Dirry/Downloads/PetervrlK.pdf)
+- YouTube playlist: [Verilog HDL complete course](https://www.youtube.com/playlist?list=PLqPfWwayuBvPYYQS2h5p622vGR6aZIfux)
+- YouTube: [Modules, Number Representations & Comments](https://www.youtube.com/watch?v=IP_8QJ5k2I8)
+- YouTube: [Verilog Data Types Explained](https://www.youtube.com/watch?v=R57WWiEqkLQ)
+- YouTube: [Port Connection Rules in Verilog](https://www.youtube.com/watch?v=C219U48xX04)
+- YouTube: [2-Bit Comparator using Gate Level Modeling in Verilog](https://www.youtube.com/watch?v=7r6BRVTjStc)
+- YouTube: [Logical Operators, Shift & Concatenation in Verilog](https://www.youtube.com/watch?v=s7FXSFFniWQ)
+- YouTube: [Introduction to Behavioral Modeling in Verilog](https://www.youtube.com/watch?v=dTCiUa-s2YE)
+- YouTube: [Inter vs Intra Assignment Explained](https://www.youtube.com/watch?v=VG5xdgxjtOY)
+- YouTube: [Loops & Case Statements in Verilog](https://www.youtube.com/watch?v=g1MkRBDuM1Y)
+- YouTube: [MOD-4 Synchronous Up Counter Explained](https://www.youtube.com/watch?v=CEFFm50USgA)

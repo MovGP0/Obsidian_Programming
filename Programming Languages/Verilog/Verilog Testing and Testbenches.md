@@ -51,6 +51,44 @@ module CounterTests;
 endmodule
 ```
 
+For a small combinational design, the structure is the same but usually does not need a clock:
+
+```verilog
+module Mux4Tests;
+    reg [1:0] Select;
+    reg A;
+    reg B;
+    reg C;
+    reg D;
+    wire Y;
+
+    Mux4 Dut
+    (
+        .Select(Select),
+        .A(A),
+        .B(B),
+        .C(C),
+        .D(D),
+        .Y(Y)
+    );
+
+    initial
+    begin
+        A = 1'b0;
+        B = 1'b1;
+        C = 1'b0;
+        D = 1'b1;
+
+        Select = 2'b00; #10;
+        Select = 2'b01; #10;
+        Select = 2'b10; #10;
+        Select = 2'b11; #10;
+
+        $finish;
+    end
+endmodule
+```
+
 ## Design Under Test
 
 The design under test (DUT) is just a module instance:
@@ -174,6 +212,17 @@ begin
 end
 ```
 
+`$monitor` is useful for quick beginner testbenches because it automatically prints again when a watched value changes:
+
+```verilog
+initial
+begin
+    $monitor("time=%0t select=%b y=%b", $time, Select, Y);
+end
+```
+
+Use `$display` when the testbench reaches a specific line. Use `$monitor` when the interesting event is a value change.
+
 ## Testbench Tasks
 
 Reusable stimulus:
@@ -255,3 +304,4 @@ Random tests are useful, but keep deterministic directed tests for known edge ca
 ## Sources
 
 - Peter M. Nyasulu, "Introduction to Verilog", sections 16 and 17.
+- YouTube: [Loops & Case Statements in Verilog](https://www.youtube.com/watch?v=g1MkRBDuM1Y)
