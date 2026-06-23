@@ -1,6 +1,7 @@
-﻿# Verilog Synthesis and Component Inference
-
-Synthesis converts Verilog RTL into hardware: gates, flip-flops, latches, multiplexers, adders, memories, and tri-state structures. The same simulation behavior can sometimes synthesize into very different hardware depending on coding style.
+﻿---
+title: Synthesis and Component Inference
+---
+**Synthesis** converts Verilog RTL into hardware: gates, flip-flops, latches, multiplexers, adders, memories, and tri-state structures. The same simulation behavior can sometimes synthesize into very different hardware depending on coding style.
 
 ## What Synthesis Infers
 
@@ -208,10 +209,12 @@ Whether this infers block RAM, distributed RAM, flip-flops, or an ASIC memory ma
 
 ## Related Notes
 
-- [[Verilog]]
+- [[_Verilog|Verilog]]
 - [[Verilog Behavioral Modeling]]
 - [[Verilog State Machines]]
-- [[Verilog Data Types and Operators]]
+- [[Verilog Data Types]]
+- [[Verilog Operators]]
+- [[Verilog Concatenation and Replication]]
 
 ## Sources
 

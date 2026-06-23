@@ -1,6 +1,7 @@
-﻿# Verilog Testing and Testbenches
-
-A testbench is a simulation-only Verilog module that instantiates the design under test, drives inputs, checks outputs, and records waveforms.
+﻿---
+title: Testing and Testbenches
+---
+A **testbench** is a simulation-only Verilog module that instantiates the design under test, drives inputs, checks outputs, and records waveforms.
 
 ## Testbench Structure
 
@@ -296,9 +297,10 @@ Random tests are useful, but keep deterministic directed tests for known edge ca
 
 ## Related Notes
 
-- [[Verilog]]
-- [[Verilog Functions and Tasks]]
-- [[Verilog Compiler Directives and System Tasks]]
+- [[_Verilog|Verilog]]
+- [[Verilog Functions]]
+- [[Verilog Tasks]]
+- [[Verilog System Tasks]]
 - [[Verilog State Machines]]
 
 ## Sources

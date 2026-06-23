@@ -1,6 +1,7 @@
-﻿# Verilog Modules and Instantiation
-
-A module is the main design unit in Verilog. It defines a block of hardware with ports, internal signals, assignments, procedures, and child module instances.
+---
+title: Modules and Instantiation
+---
+A **module** is the main design unit in Verilog. It defines a block of hardware with ports, internal signals, assignments, procedures, and child module instances.
 
 ## Module Declaration
 
@@ -234,8 +235,9 @@ Internal tri-states are often not supported in FPGA fabric and may be converted 
 
 ## Related Notes
 
-- [[Verilog]]
+- [[_Verilog|Verilog]]
 - [[Verilog Behavioral Modeling]]
+- [[Verilog Concatenation and Replication]]
 - [[Verilog Synthesis and Component Inference]]
 
 ## Sources

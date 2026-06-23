@@ -1,6 +1,9 @@
-﻿# Verilog
+﻿---
+title: Verilog
+---
+**Verilog** is a hardware description language (HDL) for describing digital circuits.
 
-Verilog is a hardware description language (HDL) for describing digital circuits. A Verilog design can be simulated, synthesized for an FPGA, or synthesized into an ASIC netlist when it is written in the synthesizable subset.
+A Verilog design can be simulated, synthesized for an FPGA, or synthesized into an ASIC netlist when it is written in the synthesizable subset.
 
 ## Mental Model
 
@@ -136,22 +139,30 @@ Usually simulation-only:
 | Topic | Where to continue |
 | --- | --- |
 | Modules, comments, literals, and four-state values | [[Verilog Syntax and Literals]] |
-| `wire`, `reg`, `integer`, `real`, `time`, vectors, and operators | [[Verilog Data Types and Operators]] |
+| `wire`, `reg`, `integer`, `real`, `time`, vectors, memories, and parameters | [[Verilog Data Types]] |
+| Arithmetic, bitwise, logical, shift, and width behavior | [[Verilog Operators]] |
+| Curly-brace vector construction and repeated bit patterns | [[Verilog Concatenation and Replication]] |
 | Port connection by name/order, structural style, half adders, and full adders | [[Verilog Modules and Instantiation]] |
 | `always` blocks, `if`, `case`, loops, MUXes, and assignment timing | [[Verilog Behavioral Modeling]] |
 | `$display`, `$monitor`, clocks, reset stimulus, and DUT structure | [[Verilog Testing and Testbenches]] |
 | Counters, shift registers, and FSM organization | [[Verilog State Machines]] |
+| A complete small CPU build that connects RTL concepts | [[RISC-V in Verilog]] |
 
 ## Dedicated Notes
 
+- [[RISC-V in Verilog]]
 - [[Verilog Syntax and Literals]]
-- [[Verilog Data Types and Operators]]
+- [[Verilog Data Types]]
+- [[Verilog Operators]]
+- [[Verilog Concatenation and Replication]]
 - [[Verilog Modules and Instantiation]]
 - [[Verilog Behavioral Modeling]]
-- [[Verilog Functions and Tasks]]
+- [[Verilog Functions]]
+- [[Verilog Tasks]]
 - [[Verilog State Machines]]
 - [[Verilog Testing and Testbenches]]
-- [[Verilog Compiler Directives and System Tasks]]
+- [[Verilog Compiler Directives]]
+- [[Verilog System Tasks]]
 - [[Verilog Synthesis and Component Inference]]
 - [[Verilog Editors]]
 

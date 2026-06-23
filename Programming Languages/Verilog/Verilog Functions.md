@@ -1,8 +1,9 @@
-﻿# Verilog Functions and Tasks
+---
+title: Functions
+---
+**Functions** package reusable procedural code inside a module. They are most useful for reusable combinational expressions.
 
-Functions and tasks package reusable procedural code inside a module. Functions are most useful for reusable combinational expressions. Tasks are most useful in testbenches or for procedural code with multiple outputs.
-
-## Functions
+## Basic Function
 
 A function returns one value and is used as an expression operand.
 
@@ -40,6 +41,12 @@ function [3:0] Increment;
         Increment = Value + 4'd1;
     end
 endfunction
+```
+
+Read this as:
+
+```text
+Increment is both the function name and the value returned by the function.
 ```
 
 ## Function Rules
@@ -124,50 +131,6 @@ function [3:0] SelectValue;
 endfunction
 ```
 
-## Tasks
-
-A task does not return a value directly. It can have input, output, and inout arguments.
-
-```verilog
-task And4;
-    input  [3:0] A;
-    input  [3:0] B;
-    output [3:0] Y;
-    integer Index;
-    begin
-        for (Index = 0; Index < 4; Index = Index + 1)
-        begin
-            Y[Index] = A[Index] & B[Index];
-        end
-    end
-endtask
-```
-
-Call it from a procedure:
-
-```verilog
-always @(*)
-begin
-    And4(A, B, Result);
-end
-```
-
-## Tasks in Testbenches
-
-Tasks are especially useful for reusable stimulus:
-
-```verilog
-task PulseStart;
-    begin
-        Start = 1'b1;
-        @(posedge Clock);
-        Start = 1'b0;
-    end
-endtask
-```
-
-This task contains event control, so it is testbench-only.
-
 ## Function vs Task
 
 | Feature | Function | Task |
@@ -181,10 +144,11 @@ This task contains event control, so it is testbench-only.
 
 ## Related Notes
 
-- [[Verilog]]
+- [[_Verilog|Verilog]]
+- [[Verilog Tasks]]
 - [[Verilog Behavioral Modeling]]
 - [[Verilog Testing and Testbenches]]
 
 ## Sources
 
-- Peter M. Nyasulu, "Introduction to Verilog", sections 11 and 12.
+- Peter M. Nyasulu, "Introduction to Verilog", section 11.

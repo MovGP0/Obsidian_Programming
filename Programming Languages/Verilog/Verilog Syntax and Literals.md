@@ -1,5 +1,6 @@
-﻿# Verilog Syntax and Literals
-
+---
+title: Syntax and Literals
+---
 This note covers the lexical layer of Verilog: comments, identifiers, numbers, keywords, and the small syntax rules that affect every design.
 
 ## Whitespace
@@ -115,40 +116,6 @@ Strings are mostly used in testbenches and system tasks:
 $display("Value = %h", Value);
 ```
 
-## Keywords
-
-Common Verilog keywords:
-
-```verilog
-always
-and
-assign
-begin
-case
-default
-else
-end
-endcase
-endmodule
-for
-function
-if
-initial
-input
-inout
-module
-negedge
-or
-output
-parameter
-posedge
-reg
-task
-wire
-```
-
-Do not use keywords as signal or module names.
-
 ## Source File Skeleton
 
 ```verilog
@@ -191,9 +158,11 @@ Every design unit is wrapped by `module` and `endmodule`. Port declarations desc
 
 ## Related Notes
 
-- [[Verilog]]
-- [[Verilog Data Types and Operators]]
-- [[Verilog Compiler Directives and System Tasks]]
+- [[_Verilog|Verilog]]
+- [[Verilog Data Types]]
+- [[Verilog Operators]]
+- [[Verilog Compiler Directives]]
+- [[Verilog System Tasks]]
 
 ## Sources
 

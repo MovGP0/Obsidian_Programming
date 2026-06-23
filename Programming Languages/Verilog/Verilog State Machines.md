@@ -1,6 +1,7 @@
-﻿# Verilog State Machines
-
-Finite state machines (FSMs) model control logic. A good FSM separates current-state storage from next-state and output logic.
+---
+title: Finite State Machines
+---
+**Finite state machines** (**FSMs**) model control logic. A good FSM separates current-state storage from next-state and output logic.
 
 ## State Machine Parts
 
@@ -271,7 +272,7 @@ end
 
 ## Related Notes
 
-- [[Verilog]]
+- [[_Verilog|Verilog]]
 - [[Verilog Behavioral Modeling]]
 - [[Verilog Testing and Testbenches]]
 - [[Verilog Synthesis and Component Inference]]
