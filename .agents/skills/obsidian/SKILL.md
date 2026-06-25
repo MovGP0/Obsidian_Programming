@@ -1,3 +1,8 @@
+---
+name: obsidian
+description: Use when creating, editing, splitting, validating, or linking Obsidian notes in this repository.
+---
+
 - This is an Obsidian repository about computer administration and programming.
 
 # Articles
