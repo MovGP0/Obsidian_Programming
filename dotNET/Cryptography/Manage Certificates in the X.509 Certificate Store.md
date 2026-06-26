@@ -49,3 +49,10 @@ finally
     store.Close();
 }
 ```
+
+## See also
+
+- [[Create X.509 Certificates using CertificateRequest]]
+- [[Create Certificate Signing Requests in .NET]]
+- [[Create and Parse Certificate Revocation Lists in .NET]]
+- [[Import and Export PEM Keys and Certificates in .NET]]
