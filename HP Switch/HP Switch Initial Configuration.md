@@ -1,4 +1,6 @@
-## HP Switch Initial Configuration
+---
+title: Initial Configuration
+---
 ### Verbindung mit Switch herstellen / Switch Initialisieren
 * Mit PUTTY über serielle Verbindung und Konsolenkabel vom Switch verbinden
 * Benutzername `admin` ohne Passwort

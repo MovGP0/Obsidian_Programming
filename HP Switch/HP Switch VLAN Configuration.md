@@ -1,4 +1,6 @@
-## HP Switch VLAN Configuration
+---
+title: VLAN Configuration
+---
 ### VLAN einrichten
 * Konfigurationsmodus aktivieren
 `_cmdline-mode on`

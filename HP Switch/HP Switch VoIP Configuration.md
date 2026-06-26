@@ -1,4 +1,6 @@
-## HP Switch VoIP Configuration
+---
+title: Voice over IP (VoIP) Configuration
+---
 * VLAN für VoIP erstellen
 [[HP Switch VLAN Configuration]]
 

@@ -1,4 +1,6 @@
-## HP Switch SNMP Monitoring
+---
+title: SNMP Monitoring
+---
 ### SNMPv2 einrichten
 ```ad-warning
 SNMPv2 sendet Statistiken unverschlüsselt an alle Listener-Geräte mit Gruppennamen

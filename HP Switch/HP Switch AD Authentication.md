@@ -1,4 +1,6 @@
-## HP Switch Active Directory / RADIUS Authentication
+---
+title: Active Directory / RADIUS Authentication
+---
 ```ad-info
 Zentrale Authentifizierung am HP Switch mittels RADIUS-Protokoll, welches zB. von ActiveDirectory unterstützt wird.
 ```

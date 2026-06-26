@@ -1,4 +1,6 @@
-## HP Switch QoS Traffic Shaping
+---
+title: Quality of Service (QoS) Traffic Shaping
+---
 * Konfigurationsmodus aktivieren
 `_cmdline-mode on`
 `system-view`

@@ -1,4 +1,6 @@
-## HP Switch Link Aggregation
+---
+title: VLAN Link Aggregation
+---
 ```ad-info
 Mehrere Ports aus Performance- oder Redundanzgründen zu einem zusammenschalten.
 ```

@@ -1,4 +1,6 @@
-## HP Switch DHCP Configuration
+---
+title: DHCP Server
+---
 ### DHCP-Server einrichten
 * Konfigurationsmodus aktivieren
 `_cmdline-mode on`

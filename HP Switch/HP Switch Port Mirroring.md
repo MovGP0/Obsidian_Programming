@@ -1,4 +1,6 @@
-## HP Switch Port Mirroring
+---
+title: Port Mirroring
+---
 ```ad-info
 Dient dazu den Traffic eines Ports auf einen anderen Port zu spiegeln, um den Network-Traffic analysieren zu können.
 ```
