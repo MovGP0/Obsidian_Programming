@@ -1,10 +1,14 @@
-- [[rustc]] Compiler
+﻿- [[rustc]] Compiler
 - [[cargo]] Package Manager
 - [[rustdoc]] Documentation Tool
 - [[rustup]] Rust toolchain updater
 
 ## Language Features
 - [[Rust Variables]]
+
+## Performance
+
+- [[Rust Performance Optimizations]]
 
 ## Installation
 
