@@ -1,3 +1,8 @@
+---
+title: Content-based Filtering
+source: Practical Recommender Systems
+source_chapter: 10
+---
 **Content-based filtering** recommends items similar to items the user already liked. It uses item features rather than only user behavior.
 
 ## Item profile
@@ -30,6 +35,8 @@ For descriptions, titles, or reviews, TF-IDF gives higher weight to terms that a
 $$
 \operatorname{tfidf}(t, i) = \operatorname{tf}(t, i) \cdot \operatorname{idf}(t)
 $$
+
+See [[TF-IDF for Content-based Recommendation]] for term weighting and [[Latent Dirichlet Allocation for Recommendation]] for topic profiles.
 
 ## C# example: recommend by profile cosine
 
@@ -64,6 +71,46 @@ static double CosineSimilarity(
 }
 ```
 
+## Rust example: recommend by profile cosine
+
+```rust
+use std::collections::{HashMap, HashSet};
+
+fn cosine(a: &HashMap<String, f64>, b: &HashMap<String, f64>) -> f64
+{
+    let dot = a.iter()
+        .map(|(key, value)| value * b.get(key).copied().unwrap_or(0.0))
+        .sum::<f64>();
+    let norm_a = a.values().map(|value| value * value).sum::<f64>().sqrt();
+    let norm_b = b.values().map(|value| value * value).sum::<f64>().sqrt();
+
+    if norm_a == 0.0 || norm_b == 0.0
+    {
+        0.0
+    }
+    else
+    {
+        dot / (norm_a * norm_b)
+    }
+}
+
+fn recommend_content_based(
+    user_profile: &HashMap<String, f64>,
+    item_profiles: &HashMap<String, HashMap<String, f64>>,
+    seen: &HashSet<String>,
+    count: usize,
+) -> Vec<String>
+{
+    let mut scored = item_profiles.iter()
+        .filter(|(item, _)| !seen.contains(*item))
+        .map(|(item, profile)| (item.clone(), cosine(user_profile, profile)))
+        .collect::<Vec<_>>();
+
+    scored.sort_by(|a, b| b.1.total_cmp(&a.1));
+    scored.into_iter().take(count).map(|(item, _)| item).collect()
+}
+```
+
 ## Strengths
 
 - Works for new items if metadata exists.
@@ -75,3 +122,14 @@ static double CosineSimilarity(
 - Can over-specialize and recommend only near duplicates.
 - Depends heavily on metadata quality.
 - May miss taste signals not present in item features.
+
+## Related algorithms
+
+- [[Similarity Measures]]
+- [[Neighborhood Collaborative Filtering]]
+- [[Hybrid Recommenders]]
+- [[Cold Start Strategies]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 10.

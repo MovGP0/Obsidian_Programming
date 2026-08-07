@@ -1,3 +1,8 @@
+﻿---
+title: User-Item Matrix and Ratings
+source: Practical Recommender Systems
+source_chapter: 4
+---
 The **user-item matrix** is the central data structure for many recommender algorithms. Rows represent users, columns represent items, and cells contain a preference signal.
 
 |        | item A | item B | item C |
@@ -75,6 +80,48 @@ static double CalculateImplicitPreference(
 }
 ```
 
+## Rust example: weighted implicit rating
+
+```rust
+#[derive(Clone, Copy)]
+enum EventType
+{
+    View,
+    Click,
+    AddToCart,
+    Purchase,
+    Like,
+}
+
+struct UserEvent
+{
+    event_type: EventType,
+    age_days: f64,
+}
+
+fn event_weight(event_type: EventType) -> f64
+{
+    match event_type
+    {
+        EventType::View => 0.1,
+        EventType::Click => 0.3,
+        EventType::AddToCart => 0.7,
+        EventType::Purchase | EventType::Like => 1.0,
+    }
+}
+
+fn implicit_preference(events: &[UserEvent], decay_days: f64) -> f64
+{
+    events.iter()
+        .map(|event|
+        {
+            let time_decay = (-event.age_days.max(0.0) / decay_days).exp();
+            event_weight(event.event_type) * time_decay
+        })
+        .sum()
+}
+```
+
 ## Sparsity
 
 Most users interact with only a tiny part of the catalog. This makes the matrix sparse. Sparsity affects:
@@ -86,3 +133,12 @@ Most users interact with only a tiny part of the catalog. This makes the matrix 
 
 Good systems keep both the raw events and the derived matrix. Raw events allow recalculation when weights, decay, or business meaning changes.
 
+## Related algorithms
+
+- [[Neighborhood Collaborative Filtering]]
+- [[Matrix Factorization]]
+- [[Bayesian Personalized Ranking]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 4.

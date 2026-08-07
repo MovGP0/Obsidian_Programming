@@ -8,7 +8,7 @@ title: Matching Algorithms
 The original OkCupid system separated two decisions:
 
 1. [[OkCupid Matching Algorithm|The matching algorithm]] calculated a mutual compatibility score for two users. It used their answers, acceptable partner answers, and personal importance weights.
-2. [[OkCupid Question Selection Algorithm|The question selection algorithm]] decided which unanswered questions to show first. OkCupid said that it ranked questions by how well they divided the population.
+2. [[OkCupid Question Selection Algorithm|The question selection algorithm]] decided which unanswered questions to show first. Public descriptions say that it considered how well questions divided the population and how much information they added to the compatibility estimate.
 
 ```mermaid
 flowchart LR
@@ -42,6 +42,7 @@ The question selector controls what data enters the system. The matching algorit
 
 ## Primary historical sources
 
+- [[_OkTrends Archive|OkTrends archive summaries and capture manifest]]
 - [OkCupid FAAAQ: Frequently Asked-For Answers About Questions](https://web.archive.org/web/20110103221822/http://www.okcupid.com/faaaq)
 - [Christian Rudder: Inside OKCupid, the math of online dating](https://www.ted.com/talks/christian_rudder_inside_okcupid_the_math_of_online_dating)
 - [OkTrends: How Races and Religions Match in Online Dating](https://gwern.net/doc/psychology/okcupid/howracesandreligionsmatchinonlinedating.html)

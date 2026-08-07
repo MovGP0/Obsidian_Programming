@@ -1,3 +1,8 @@
+﻿---
+title: Popularity and Non-personalized Recommendations
+source: Practical Recommender Systems
+source_chapter: 5
+---
 **Non-personalized recommenders** ignore the active user's individual taste. They recommend items based on global or segment-level signals.
 
 These recommenders are simple but important. They are useful before enough personal data exists and serve as strong baselines for more complex algorithms.
@@ -44,6 +49,37 @@ static IReadOnlyList<string> GetTrendingItems(
 }
 ```
 
+## Rust example: popularity with time decay
+
+```rust
+use std::collections::HashMap;
+
+struct ItemEvent
+{
+    item_id: String,
+    age_hours: f64,
+    weight: f64,
+}
+
+fn trending_items(events: &[ItemEvent], half_life_hours: f64, count: usize)
+    -> Vec<(String, f64)>
+{
+    let decay_rate = std::f64::consts::LN_2 / half_life_hours;
+    let mut scores = HashMap::<String, f64>::new();
+
+    for event in events
+    {
+        let decay = (-decay_rate * event.age_hours.max(0.0)).exp();
+        *scores.entry(event.item_id.clone()).or_default() += event.weight * decay;
+    }
+
+    let mut ranked = scores.into_iter().collect::<Vec<_>>();
+    ranked.sort_by(|a, b| b.1.total_cmp(&a.1));
+    ranked.truncate(count);
+    ranked
+}
+```
+
 ## Advantages
 
 - Works for anonymous users.
@@ -60,3 +96,12 @@ static IReadOnlyList<string> GetTrendingItems(
 
 Use popularity as a baseline. A more complex recommender should be able to beat it for the target metric.
 
+## Related algorithms
+
+- [[Association Rule Recommendations]]
+- [[Cold Start Strategies]]
+- [[Evaluating Recommender Systems]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 5.

@@ -1,3 +1,8 @@
+---
+title: Evaluating Recommender Systems
+source: Practical Recommender Systems
+source_chapter: 9
+---
 **Recommender evaluation** checks whether the system improves user experience and business outcomes. Offline metrics are useful, but online experiments are usually needed before trusting a production change.
 
 ## Offline evaluation
@@ -43,6 +48,51 @@ static double PrecisionAtK(
 }
 ```
 
+## Rust example: precision at k and NDCG
+
+```rust
+use std::collections::HashSet;
+
+fn precision_at_k(recommendations: &[String], relevant: &HashSet<String>, k: usize) -> f64
+{
+    if k == 0
+    {
+        return 0.0;
+    }
+
+    let hits = recommendations.iter()
+        .take(k)
+        .filter(|item| relevant.contains(*item))
+        .count();
+    hits as f64 / k as f64
+}
+
+fn ndcg_at_k(relevance: &[f64], k: usize) -> f64
+{
+    fn dcg(values: &[f64], k: usize) -> f64
+    {
+        values.iter()
+            .take(k)
+            .enumerate()
+            .map(|(index, value)| (2.0_f64.powf(*value) - 1.0) / (index as f64 + 2.0).log2())
+            .sum()
+    }
+
+    let mut ideal = relevance.to_vec();
+    ideal.sort_by(|a, b| b.total_cmp(a));
+    let ideal_score = dcg(&ideal, k);
+
+    if ideal_score == 0.0
+    {
+        0.0
+    }
+    else
+    {
+        dcg(relevance, k) / ideal_score
+    }
+}
+```
+
 ## Online evaluation
 
 Online evaluation measures real behavior:
@@ -65,3 +115,11 @@ A/B tests compare a control recommender with a candidate recommender. Use guardr
 - Letting popularity dominate every metric.
 - Forgetting that exposure affects future training data.
 
+## Related algorithms
+
+- [[Ranking and Learning to Rank]]
+- [[Popularity and Non-personalized Recommendations]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 9.

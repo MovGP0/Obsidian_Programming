@@ -1,3 +1,8 @@
+﻿---
+title: Matrix Factorization
+source: Practical Recommender Systems
+source_chapter: 11
+---
 **Matrix factorization** represents users and items as vectors in a latent factor space. The model learns hidden dimensions such as genre preference, seriousness, popularity, or other factors that may not have explicit names.
 
 ## Basic model
@@ -19,6 +24,8 @@ $$
 Singular Value Decomposition decomposes a matrix into factor matrices. For recommender systems, the useful idea is dimensionality reduction: approximate the sparse rating matrix with lower-dimensional user and item factors.
 
 Classic SVD expects a dense matrix, so missing ratings must be handled carefully. Practical recommender implementations often learn factors directly from observed interactions.
+
+See [[Singular Value Decomposition Recommenders]] for classical SVD and [[Funk SVD]] for direct factor learning.
 
 ## Funk SVD / gradient descent
 
@@ -73,6 +80,38 @@ static void TrainOne(
 }
 ```
 
+## Rust example: factor model
+
+```rust
+use std::collections::HashMap;
+
+struct MatrixFactorModel
+{
+    global_mean: f64,
+    user_factors: HashMap<String, Vec<f64>>,
+    item_factors: HashMap<String, Vec<f64>>,
+    user_biases: HashMap<String, f64>,
+    item_biases: HashMap<String, f64>,
+}
+
+impl MatrixFactorModel
+{
+    fn predict(&self, user_id: &str, item_id: &str) -> Option<f64>
+    {
+        let user = self.user_factors.get(user_id)?;
+        let item = self.item_factors.get(item_id)?;
+        let dot = user.iter().zip(item).map(|(left, right)| left * right).sum::<f64>();
+
+        Some(
+            self.global_mean
+                + self.user_biases.get(user_id).copied().unwrap_or(0.0)
+                + self.item_biases.get(item_id).copied().unwrap_or(0.0)
+                + dot,
+        )
+    }
+}
+```
+
 ## Strengths
 
 - Finds latent structure not encoded in metadata.
@@ -84,3 +123,13 @@ static void TrainOne(
 - Harder to explain.
 - Needs enough interactions.
 - Requires tuning factors, learning rate, regularization, epochs, and negative sampling for implicit data.
+
+## Related algorithms
+
+- [[Neighborhood Collaborative Filtering]]
+- [[Bayesian Personalized Ranking]]
+- [[Hybrid Recommenders]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 11.

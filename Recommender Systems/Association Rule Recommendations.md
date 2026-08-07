@@ -1,3 +1,10 @@
+---
+title: Association Rule Recommendations
+source: Practical Recommender Systems
+source_chapters:
+  - 5
+  - 6
+---
 **Association rules** recommend items that frequently occur together. A common product form is:
 
 ```text
@@ -84,6 +91,66 @@ static List<AssociationRule> BuildPairRules(
 }
 ```
 
+## Rust example: pair rules
+
+```rust
+use std::collections::{HashMap, HashSet};
+
+#[derive(Debug)]
+struct AssociationRule
+{
+    source: String,
+    target: String,
+    confidence: f64,
+    lift: f64,
+}
+
+fn build_pair_rules(baskets: &[HashSet<String>], minimum_pair_count: usize)
+    -> Vec<AssociationRule>
+{
+    let mut item_counts = HashMap::<String, usize>::new();
+    let mut pair_counts = HashMap::<(String, String), usize>::new();
+
+    for basket in baskets
+    {
+        for item in basket
+        {
+            *item_counts.entry(item.clone()).or_default() += 1;
+        }
+
+        for source in basket
+        {
+            for target in basket
+            {
+                if source != target
+                {
+                    *pair_counts.entry((source.clone(), target.clone())).or_default() += 1;
+                }
+            }
+        }
+    }
+
+    let mut rules = pair_counts.into_iter()
+        .filter(|(_, count)| *count >= minimum_pair_count)
+        .map(|((source, target), pair_count)|
+        {
+            let confidence = pair_count as f64 / item_counts[&source] as f64;
+            let target_support = item_counts[&target] as f64 / baskets.len() as f64;
+            AssociationRule
+            {
+                source,
+                target,
+                confidence,
+                lift: confidence / target_support,
+            }
+        })
+        .collect::<Vec<_>>();
+
+    rules.sort_by(|a, b| b.confidence.total_cmp(&a.confidence));
+    rules
+}
+```
+
 ## Use when
 
 - Interactions are transactional.
@@ -93,3 +160,13 @@ static List<AssociationRule> BuildPairRules(
 ## Watch out for
 
 High confidence can be caused by item popularity. Lift helps distinguish meaningful relationships from "everything points to the bestseller".
+
+## Related algorithms
+
+- [[Popularity and Non-personalized Recommendations]]
+- [[Neighborhood Collaborative Filtering]]
+- [[Cold Start Strategies]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapters 5 and 6.

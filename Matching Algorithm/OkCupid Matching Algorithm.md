@@ -1,4 +1,4 @@
-﻿---
+---
 title: OkCupid Matching Algorithm
 ---
 The **original OkCupid matching algorithm** calculated a symmetric match percentage from questions that two users had both answered. Each user defined what compatibility meant to them. OkCupid supplied the calculation but did not supply a fixed expert model of a good relationship.
@@ -71,6 +71,14 @@ $$
 
 The raw match is approximately $94.4\%$.
 
+The geometric mean also limits compensation between the two directions. If one user gives the other a score of $100\%$, but receives a score of only $25\%$, the geometric mean is:
+
+$$
+\sqrt{1.0 \times 0.25} = 0.50
+$$
+
+The arithmetic mean would be $62.5\%$. The geometric mean gives $50\%$, so a high score in one direction cannot hide a low score in the other direction.
+
 ## Original confidence adjustment
 
 A high score based on very few common questions is not reliable. The archived OkCupid explanation used this margin:
@@ -85,7 +93,19 @@ $$
 M_{published} = \max\left(0, M_{raw} - \frac{1}{|S|}\right)
 $$
 
-With two shared questions, the margin is $50\%$. A raw score of $94.4\%$ is therefore published as approximately $44.4\%$. With 100 shared questions, the margin is $1\%$, so a published $99\%$ match becomes possible.
+With two shared questions, the margin is $50\%$. A raw score of $94.4\%$ is therefore published as approximately $44.4\%$.
+
+For a perfect raw match, the original rule gives these maximum displayed scores:
+
+| Questions in common | Maximum displayed score |
+| ---: | ---: |
+| 10 | $90\%$ |
+| 20 | $95\%$ |
+| 50 | $98\%$ |
+| 100 | $99\%$ |
+| 1,000 | $99.9\%$ |
+
+This rule made shared coverage important. Answering more questions increased the chance that two users had a large common set. It also reduced the confidence penalty. This statement describes the old published system, not the current OkCupid product.
 
 OkCupid later changed the confidence adjustment. A 2014 description by the founders says that this was the only part of the formula that had changed at that time. The exact later adjustment was not published in that description.
 
@@ -117,7 +137,9 @@ The confidence correction depends only on the number of shared questions. It doe
 
 ## Sources
 
+- [[OkTrends - How Races and Religions Match in Online Dating]]
 - [OkCupid FAAAQ: the original formula and confidence adjustment](https://web.archive.org/web/20110103221822/http://www.okcupid.com/faaaq)
 - [Christian Rudder's TED-Ed explanation](https://www.ted.com/talks/christian_rudder_inside_okcupid_the_math_of_online_dating)
 - [OkTrends explanation of user-defined compatibility](https://gwern.net/doc/psychology/okcupid/howracesandreligionsmatchinonlinedating.html)
 - [Founders' description of the original formula](https://www.artsy.net/article/ruse-laboratories-chris-coyne-max-krohn-sam-yagan-and)
+- [HackerEarth reconstruction of the published calculation](https://www.hackerearth.com/practice/notes/okcupids-matching-algorithm-1/)

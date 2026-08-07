@@ -1,3 +1,8 @@
+---
+title: Cold Start Strategies
+source: Practical Recommender Systems
+source_chapter: 6
+---
 **Cold start** happens when the system lacks enough data for a user, an item, or both.
 
 ## Types
@@ -47,7 +52,54 @@ static IReadOnlyList<string> RecommendWithFallbacks(
 }
 ```
 
+## Rust example: select a fallback
+
+```rust
+#[derive(Debug, PartialEq)]
+enum RecommendationStrategy
+{
+    Collaborative,
+    ContentBased,
+    SegmentPopular,
+    GloballyPopular,
+}
+
+fn select_strategy(
+    interaction_count: usize,
+    has_item_metadata: bool,
+    has_segment: bool,
+) -> RecommendationStrategy
+{
+    if interaction_count >= 20
+    {
+        RecommendationStrategy::Collaborative
+    }
+    else if interaction_count > 0 && has_item_metadata
+    {
+        RecommendationStrategy::ContentBased
+    }
+    else if has_segment
+    {
+        RecommendationStrategy::SegmentPopular
+    }
+    else
+    {
+        RecommendationStrategy::GloballyPopular
+    }
+}
+```
+
 ## Design principle
 
 Do not treat cold start as an exception. It is a normal state. A recommender should deliberately choose a fallback path for every data condition.
 
+## Related algorithms
+
+- [[Popularity and Non-personalized Recommendations]]
+- [[Association Rule Recommendations]]
+- [[Content-based Filtering]]
+- [[Hybrid Recommenders]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 6.

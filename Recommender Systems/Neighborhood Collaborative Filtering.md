@@ -1,3 +1,8 @@
+﻿---
+title: Neighborhood Collaborative Filtering
+source: Practical Recommender Systems
+source_chapter: 8
+---
 **Neighborhood collaborative filtering** recommends from similar users or similar items. It uses behavior patterns, not item metadata.
 
 ## User-user collaborative filtering
@@ -72,6 +77,51 @@ static IReadOnlyList<string> RecommendFromSimilarItems(
 }
 ```
 
+## Rust example: item-item recommendation
+
+```rust
+use std::collections::HashMap;
+
+fn recommend_from_similar_items(
+    user_ratings: &HashMap<String, f64>,
+    similarities: &HashMap<String, Vec<(String, f64)>>,
+    count: usize,
+) -> Vec<(String, f64)>
+{
+    let mut weighted_scores = HashMap::<String, f64>::new();
+    let mut weight_totals = HashMap::<String, f64>::new();
+
+    for (rated_item, rating) in user_ratings
+    {
+        let Some(neighbors) = similarities.get(rated_item) else
+        {
+            continue;
+        };
+
+        for (candidate, similarity) in neighbors
+        {
+            if !user_ratings.contains_key(candidate)
+            {
+                *weighted_scores.entry(candidate.clone()).or_default() += similarity * rating;
+                *weight_totals.entry(candidate.clone()).or_default() += similarity.abs();
+            }
+        }
+    }
+
+    let mut predictions = weighted_scores.into_iter()
+        .filter_map(|(item, score)|
+        {
+            let weight = weight_totals[&item];
+            (weight > 0.0).then_some((item, score / weight))
+        })
+        .collect::<Vec<_>>();
+
+    predictions.sort_by(|a, b| b.1.total_cmp(&a.1));
+    predictions.truncate(count);
+    predictions
+}
+```
+
 ## Practical levers
 
 - similarity function
@@ -84,3 +134,14 @@ static IReadOnlyList<string> RecommendFromSimilarItems(
 ## Pros and cons
 
 Neighborhood methods are explainable and easy to prototype. They suffer when data is sparse, when users have unusual tastes, or when new items have little interaction history.
+
+## Related algorithms
+
+- [[Similarity Measures]]
+- [[Association Rule Recommendations]]
+- [[Matrix Factorization]]
+- [[Cold Start Strategies]]
+
+## Source
+
+- Kim Falk, *Practical Recommender Systems*, chapter 8.
