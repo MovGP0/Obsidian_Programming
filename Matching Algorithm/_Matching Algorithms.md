@@ -25,6 +25,7 @@ The question selector controls what data enters the system. The matching algorit
 | Problem | Objective | Typical methods |
 | --- | --- | --- |
 | Pair compatibility | Estimate how well two entities satisfy each other | [[OkCupid Matching Algorithm]], weighted similarity, probabilistic models |
+| Pairwise ranking | Turn repeated head-to-head choices into an ordered list | [[Elo Rating for Pairwise Photo Ranking]], Bradley-Terry model |
 | Question selection | Select the next question that gives useful information | [[OkCupid Question Selection Algorithm]], entropy, information gain, active learning |
 | Candidate recommendation | Rank people or items for one user | [[Neighborhood Collaborative Filtering]], [[Content-based Filtering]], [[Matrix Factorization]], [[Hybrid Recommenders]] |
 | Grouping | Find segments with similar categorical or numeric data | k-modes, [[K-means Clustering]] |
@@ -37,6 +38,7 @@ The question selector controls what data enters the system. The matching algorit
 - [[Content-based Filtering]] compares explicit profile features.
 - [[Matrix Factorization]] learns latent factors from an interaction matrix.
 - [[Hybrid Recommenders]] combines multiple candidate generators and rankers.
+- [[Elo Rating for Pairwise Photo Ranking]] turns user choices between two photos into a live leaderboard.
 - [Gale and Shapley's original stable-matching paper](https://doi.org/10.1080/00029890.1962.11989827) solves an assignment problem. It does not calculate romantic compatibility.
 - [Decision trees in scikit-learn](https://scikit-learn.org/stable/modules/tree.html) describe entropy-based splits that can support adaptive question selection.
 
