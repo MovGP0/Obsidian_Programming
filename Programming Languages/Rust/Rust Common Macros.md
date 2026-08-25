@@ -1,4 +1,8 @@
-
+﻿---
+title: Rust Common Macros
+tags:
+  - rust
+---
 ## format!
 
 Formats a string
@@ -29,11 +33,11 @@ println!("x = {}", x);
 
 ## panic!
 
-throws an exception
+Stops normal execution because the program reached a state that it cannot handle. Rust has no exceptions. See [[Rust Panics]].
 ```rust
 panic!();
-panic!("exception has occured");
-panic!("exception has occured: {} {message}", "type", message = "message");
+panic!("program invariant failed");
+panic!("program invariant failed: {} {message}", "type", message = "message");
 ```
 
 ## assert!

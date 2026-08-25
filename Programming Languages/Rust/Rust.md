@@ -1,10 +1,17 @@
-﻿- [[rustc]] Compiler
+﻿---
+title: Rust
+tags:
+  - rust
+---
+- [[rustc]] Compiler
 - [[cargo]] Package Manager
 - [[rustdoc]] Documentation Tool
 - [[rustup]] Rust toolchain updater
 
 ## Language Features
 - [[Rust Variables]]
+- [[Rust error handling|Rust Error Handling]]
+- [[Rust Panics]]
 
 ## Performance
 
@@ -15,7 +22,7 @@
 ### Winget
 
 ```powershell
-winget install --exact --id 'Rustlang.Rustup'
+winget install --exact --id 'Rustlang.Rustup'
 ```
 
 ## RYST Stack
@@ -34,3 +41,4 @@ winget install --exact --id 'Rustlang.Rustup'
 - [Rust and WebAssembly](https://rustwasm.github.io/docs/book/introduction.html)
 - [Rust on Exercism](https://exercism.org/tracks/rust/)
 - [Rust Playground](https://play.rust-lang.org/)
+
