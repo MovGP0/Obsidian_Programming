@@ -7,6 +7,7 @@ tags:
 - [[cargo]] Package Manager
 - [[rustdoc]] Documentation Tool
 - [[rustup]] Rust toolchain updater
+- [[blaze]] Fast incremental drop-in replacement for cargo build/run/test
 
 ## Language Features
 - [[Rust Variables]]
@@ -16,6 +17,7 @@ tags:
 ## Performance
 
 - [[Rust Performance Optimizations]]
+- [[blaze]] rebuilds in milliseconds
 
 ## Installation
 
